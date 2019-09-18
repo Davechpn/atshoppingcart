@@ -1,0 +1,32 @@
+<br><br/>
+<div class="container pulldown"  >
+
+ 
+
+  <div class="row" style="width: 100%; margin-bottom: 5px; display:flex;justify-content: space-between">
+    <button class="btn-tab-nav btn-active " *ngIf="current_view=='users'" mdbBtn type="button" gradient="peach" rounded="true" mdbWavesEffect>Users</button>
+    <button class="btn-tab-nav btn-inactive" *ngIf="current_view!='users'" (click)="switchView('users')"   type="button" color="light" rounded="true" mdbWavesEffect>Users</button>
+
+    <button class="btn-tab-nav btn-active" *ngIf="current_view=='orders'" mdbBtn type="button" gradient="peach" rounded="true" mdbWavesEffect>Orders</button>
+    <button class="btn-tab-nav btn-inactive " *ngIf="current_view!='orders'" (click)="switchView('orders')"   type="button" color="light" rounded="true" mdbWavesEffect>Orders</button>
+    
+    <button class="btn-tab-nav btn-active" *ngIf="current_view=='workboard'" mdbBtn type="button" gradient="peach" rounded="true" mdbWavesEffect>Workboard</button>
+    <button class="btn-tab-nav btn-inactive " *ngIf="current_view!='workboard'"(click)="switchView('workboard')" type="button" gradient="peach" rounded="true" mdbWavesEffect>Workboard</button>
+
+    <button class="btn-tab-nav btn-active" *ngIf ="current_view=='newproduct'"  mdbBtn type="button" gradient="peach" rounded="true" mdbWavesEffect>New Product</button>
+    <button class="btn-tab-nav btn-inactive " *ngIf ="current_view!='newproduct'"(click)= "switchView( 'newproduct')"  type="button" gradient="peach" rounded="true" mdbWavesEffect>New Product</button>
+  </div>
+  <div class="row" style="width:100%">
+    <div class="card" style="width:100%;padding: 16px"> 
+        <app-users *ngIf="current_view=='users'"></app-users>
+        <app-orders *ngIf="current_view=='orders'"></app-orders>
+        <app-newproduct *ngIf ="current_view=='newproduct'"> </app-newproduct>
+        <app-workboard *ngIf="current_view=='workboard'"> </app-workboard>
+    </div>
+
+  </div>
+
+
+
+
+</div>

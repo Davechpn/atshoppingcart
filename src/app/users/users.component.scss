@@ -1,0 +1,14 @@
+@import "./../../assets/theme/colors";
+@import "./../../assets/theme/functions";
+
+.bq-title{
+  color: var(--productTitle) !important;
+}
+
+.bq-primary {
+    border-left: 3px solid var(--productTitle) !important;
+}
+
+.btn-default {
+  background-color: var(--navBackground) !important;
+}

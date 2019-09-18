@@ -1,0 +1,39 @@
+@import "../../../assets/theme/colors";
+@import "../../../assets/theme/functions";
+
+.bq-title{
+  color: var(--productTitle) !important;
+}
+
+.bq-primary {
+    border-left: 3px solid var(--productTitle) !important;
+}
+
+.btn-default {
+  background-color: var(--navBackground) !important;
+}
+
+
+.btn-tab-nav{
+    width: 23.75%;
+    
+}
+.btn-inactive
+{
+border:0;
+margin-top: 6px;
+margin-bottom: 6px;
+border-radius: 2px;
+color: #888
+}
+.btn-active
+{
+color: white;
+border-radius: 2px;
+}
+.btn-inactive:hover
+{
+border:0;
+background-color: #eee;
+border-radius: 2px;
+}

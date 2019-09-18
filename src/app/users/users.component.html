@@ -1,0 +1,19 @@
+<blockquote class="blockquote float-left bq-primary">
+    <h3 class="bq-title">Users</h3>
+  </blockquote>
+
+<table mdbTable hover="true">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of elements">
+        <th scope="row">{{el.name}}</th>
+        <td>{{el.email}}</td>
+        <td>{{el.isAdmin}}</td>
+       
+      </tr>
+    </tbody>
+  </table>

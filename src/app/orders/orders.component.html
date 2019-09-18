@@ -1,0 +1,21 @@
+<blockquote class="blockquote float-left bq-primary">
+    <h3 class="bq-title">Orders</h3>
+  </blockquote>
+
+<table mdbTable hover="true">
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let el of elements">
+      <th scope="row">{{el.id}}</th>
+      <td>{{el.customer_name}}</td>
+      <td>{{el.time}}</td>
+      <td>{{el.delivery_address}}</td>
+      <td>{{el.status}}</td>
+
+    </tr>
+  </tbody>
+</table>

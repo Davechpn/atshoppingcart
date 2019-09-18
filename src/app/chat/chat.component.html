@@ -1,0 +1,36 @@
+<div *ngIf="chat_open" class="chat-container border-default">
+   <div class="chat-section chat-header">
+       <div class="profile-section">
+        <img class="profile-img" src = "./../../assets/img/avatar-at.png"/>
+        Buka</div>
+       <div class="bq-title" (click)="closeChat()">X</div>
+   </div>
+    <div class="chat-section chat-content">
+         
+               <div *ngFor = "let messag of messages"  class="bq-title chat-message  " >
+                 <div *ngIf="messag.admin" class="admin">{{messag.msg}}</div> 
+                 <div *ngIf="!messag.admin" class="client">{{messag.msg}}</div> 
+               </div>
+             
+         
+
+   </div>
+   <div class="chat-section chat-footer">
+     <div class="send-input">  <textarea  id="send-msg" class="border-default-sm" (keyup.enter)="sendMessage()" [(ngModel)]="message"></textarea></div>
+  
+    <div class="send-button btn-default" (click)="sendMessage()"> Send</div>
+    
+   </div> 
+
+   <!-- <iframe
+   allow="microphone;"
+   width="350"
+   height="430"
+   src="https://console.dialogflow.com/api-client/demo/embedded/e6181a90-5020-4629-a291-f5c2de393481">
+   </iframe> -->
+</div>
+
+<button class="chat-button btn-default"  *ngIf="!chat_open" (click)="openChat()">
+   Chat
+</button>
+
