@@ -8,7 +8,7 @@ import { UserService} from './../shared/services/user.service'
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-  elements;
+  users;
 
   headElements = ['Name', 'Email', 'Admin'];
 
@@ -18,9 +18,14 @@ export class UsersComponent implements OnInit {
     this.user_service.users.valueChanges()
     .subscribe(x=>{
        
-          this.elements = x
+          this.users = x
         
     })
+  }
+
+  updateRole(role){
+    console.log(role)
+  
   }
 
 }

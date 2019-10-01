@@ -34,7 +34,10 @@ export class BillingDetailsComponent implements OnInit {
 		this.userDetails = authService.getLoggedInUser();
 	}
 
-	ngOnInit() {}
+	ngOnInit() {
+
+		console.log('at billing')
+	}
 
 	updateUserDetails(form: NgForm) {
 		const data = form.value;

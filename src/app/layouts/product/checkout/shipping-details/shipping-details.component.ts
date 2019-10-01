@@ -35,7 +35,9 @@ export class ShippingDetailsComponent implements OnInit {
 		this.userDetails = authService.getLoggedInUser();
 	}
 
-	ngOnInit() {}
+	ngOnInit() {
+		console.log('shipping')
+	}
 
 	updateUserDetails(form: NgForm) {
 		const data = form.value;

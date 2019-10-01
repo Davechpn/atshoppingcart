@@ -3,7 +3,11 @@ import { ProductService } from '../../../../shared/services/product.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
+import {IPayPalConfig, ICreateOrderRequest,ITransactionItem} from 'ngx-paypal';
+ 
 declare var $: any;
+
+
 @Component({
 	selector: 'app-result',
 	templateUrl: './result.component.html',
@@ -14,6 +18,12 @@ export class ResultComponent implements OnInit {
 	date: number;
 	totalPrice = 0;
 	tax = 6.4;
+	showSuccess
+	showCancel
+	showError
+	items=[];
+
+
 
 	constructor(private productService: ProductService) {
 		/* Hiding Billing Tab Element */
@@ -24,14 +34,93 @@ export class ResultComponent implements OnInit {
 
 		this.products = productService.getLocalCartProducts();
 
+	    this.products.forEach(p=>{
+
+			let trans:ITransactionItem =  {
+				name: p.productName,
+				quantity: '1',
+				category: 'DIGITAL_GOODS',
+				unit_amount: {
+					currency_code: 'USD',
+					value: p.productPrice.toFixed(2)
+				}
+			}
+			this.items.push(trans);
+		}) 
+
 		this.products.forEach((product) => {
 			this.totalPrice += product.productPrice;
 		});
 
+		console.log(this.products)
+		console.log(this.items)
+
 		this.date = Date.now();
 	}
 
-	ngOnInit() { }
+	public payPalConfig ? : IPayPalConfig;
+ 
+	ngOnInit(): void {
+        this.initConfig();
+    }
+
+    private initConfig(): void {
+        this.payPalConfig = {
+            currency: 'USD',
+            clientId: 'ASSxTGb0961mxAaId62jWitolkY_PgarFSjjVCor3Xi9EzGb-BB8-o5IXbhqVAWNjGbDG8pUpFgVuUdm',
+			createOrderOnClient: (data) => < ICreateOrderRequest > {
+                intent: 'CAPTURE',
+                purchase_units: [{
+                    amount: {
+                        currency_code: 'USD',
+                        value: this.totalPrice.toFixed(2),
+                        breakdown: {
+                            item_total: {
+                                currency_code: 'USD',
+                                value: this.totalPrice.toFixed(2)
+                            }
+                        }
+                    },
+                    items: this.items
+				}
+	
+			]
+            },
+            advanced: {
+                commit: 'true'
+            },
+            style: {
+                label: 'paypal',
+                layout: 'vertical'
+            },
+            onApprove: (data, actions) => {
+                console.log('onApprove - transaction was approved, but not authorized', data, actions);
+                actions.order.get().then(details => {
+                    console.log('onApprove - you can get full order details inside onApprove: ', details);
+                });
+
+            },
+            onClientAuthorization: (data) => {
+                console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+                this.showSuccess = true;
+            },
+            onCancel: (data, actions) => {
+                console.log('OnCancel', data, actions);
+                this.showCancel = true;
+
+            },
+            onError: err => {
+                console.log('OnError', err);
+                this.showError = true;
+            },
+            onClick: (data, actions) => {
+                console.log('onClick', data, actions);
+              //  this.resetStatus();
+            }
+		};
+		
+		console.log(this.payPalConfig)
+    }
 
 	downloadReceipt() {
 		const data = document.getElementById('receipt');
@@ -48,7 +137,7 @@ export class ResultComponent implements OnInit {
 			const pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
 			const position = 0;
 			pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
-			pdf.save('Friends & Brands.pdf'); // Generated PDF
+			pdf.save('MyStoro.pdf'); // Generated PDF
 		});
 	}
 }

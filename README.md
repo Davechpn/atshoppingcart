@@ -1,15 +1,15 @@
 # Angular7 - ShoppingCart + MDBootstrap + Firebase + i18n
 
-[![HitCount](http://hits.dwyl.io/Friends & Brands/Angular-ShoppingCart.svg)](http://hits.dwyl.io/Friends & Brands/Angular-ShoppingCart)
-[![GitHub forks](https://img.shields.io/github/forks/Friends & Brands/Angular-ShoppingCart.svg)](https://github.com/Friends & Brands/Angular-ShoppingCart/network)
-[![Github Dependencies](https://david-dm.org/Friends & Brands/Angular-ShoppingCart.svg)](https://david-dm.org/Friends & Brands/Angular-ShoppingCart.svg)
-[![GitHub stars](https://img.shields.io/github/stars/Friends & Brands/Angular-ShoppingCart.svg)](https://github.com/Friends & Brands/Angular-ShoppingCart/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/Friends & Brands/Angular-ShoppingCart.svg)](https://github.com/Friends & Brands/Angular-ShoppingCart/issues)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Friends & Brands/Angular-ShoppingCart/blob/master/LICENSE)
+[![HitCount](http://hits.dwyl.io/MyStoro/Angular-ShoppingCart.svg)](http://hits.dwyl.io/MyStoro/Angular-ShoppingCart)
+[![GitHub forks](https://img.shields.io/github/forks/MyStoro/Angular-ShoppingCart.svg)](https://github.com/MyStoro/Angular-ShoppingCart/network)
+[![Github Dependencies](https://david-dm.org/MyStoro/Angular-ShoppingCart.svg)](https://david-dm.org/MyStoro/Angular-ShoppingCart.svg)
+[![GitHub stars](https://img.shields.io/github/stars/MyStoro/Angular-ShoppingCart.svg)](https://github.com/MyStoro/Angular-ShoppingCart/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/MyStoro/Angular-ShoppingCart.svg)](https://github.com/MyStoro/Angular-ShoppingCart/issues)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/MyStoro/Angular-ShoppingCart/blob/master/LICENSE)
 [![npm](https://img.shields.io/badge/demo-online-brightgreen.svg)](https://angular-shoppingcart.firebaseapp.com/)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/Friends & Brands/Angular-ShoppingCart.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FFriends & Brands%2FAngular-ShoppingCart)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/MyStoro/Angular-ShoppingCart.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FMyStoro%2FAngular-ShoppingCart)
 
-<!-- [![Build Status](https://travis-ci.org/Friends & Brands/Angular-ShoppingCart.svg?branch=master)](https://travis-ci.org/Friends & Brands/Angular-ShoppingCart) -->
+<!-- [![Build Status](https://travis-ci.org/MyStoro/Angular-ShoppingCart.svg?branch=master)](https://travis-ci.org/MyStoro/Angular-ShoppingCart) -->
 
 Developing a **ShoppingCart (Ecommerce) Application using Angular7**.
 
@@ -112,15 +112,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Home Page:
 
-![Alt text](https://github.com/Friends & Brands/Angular-ShoppingCart/blob/master/screenshots/home.PNG "Home Page")
+![Alt text](https://github.com/MyStoro/Angular-ShoppingCart/blob/master/screenshots/home.PNG "Home Page")
 
 ### Products Page:
 
-![Alt text](https://github.com/Friends & Brands/Angular-ShoppingCart/blob/master/screenshots/products.PNG "Home Page")
+![Alt text](https://github.com/MyStoro/Angular-ShoppingCart/blob/master/screenshots/products.PNG "Home Page")
 
 ### Work Board Page:
 
-![Alt text](https://github.com/Friends & Brands/Angular-ShoppingCart/blob/master/screenshots/drag&drop.PNG "Home Page")
+![Alt text](https://github.com/MyStoro/Angular-ShoppingCart/blob/master/screenshots/drag&drop.PNG "Home Page")
 
 ## How can I support the developer ?
 
@@ -158,4 +158,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## License
 
-This project is licensed under the MIT License - see the [MIT license](https://github.com/Friends & Brands/Angular-ShoppingCart/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [MIT license](https://github.com/MyStoro/Angular-ShoppingCart/blob/master/LICENSE) file for details

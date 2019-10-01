@@ -5,7 +5,7 @@
         Buka</div>
        <div class="bq-title" (click)="closeChat()">X</div>
    </div>
-    <div class="chat-section chat-content">
+    <div class="chat-section chat-content" #scrollMe [scrollTop]="scrollMe.scrollHeight" >
          
                <div *ngFor = "let messag of messages"  class="bq-title chat-message  " >
                  <div *ngIf="messag.admin" class="admin">{{messag.msg}}</div> 

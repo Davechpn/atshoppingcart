@@ -9,11 +9,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr mdbTableCol *ngFor="let el of elements">
-        <th scope="row">{{el.name}}</th>
-        <td>{{el.email}}</td>
-        <td>{{el.isAdmin}}</td>
-       
+      <tr mdbTableCol *ngFor="let user of users">
+        <th scope="row">{{user.name}}</th>
+        <td>{{user.email}}</td>
+        <td>{{user.isAdmin}}
+          <input type="checkbox" [checked]="user.isAdmin" (change)="updateRole($event.target.checked)"/>
+        </td>     
       </tr>
     </tbody>
   </table>

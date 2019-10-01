@@ -8,9 +8,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CheckoutComponent } from './checkout.component';
 import { BillingDetailsComponent } from './billing-details/billing-details.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
-	imports: [ CommonModule, SharedModule, CheckoutRoutingModule ],
+	imports: [ CommonModule, SharedModule, CheckoutRoutingModule, NgxPayPalModule ],
 	declarations: [
 		CheckoutComponent,
 		BillingDetailsComponent,
