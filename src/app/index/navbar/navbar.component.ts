@@ -8,6 +8,7 @@ import { AuthService } from "../../shared/services/auth.service";
 import { ProductService } from "../../shared/services/product.service";
 import { TranslateService } from "../../shared/services/translate.service";
 import { ThemeService } from "src/app/shared/services/theme.service";
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 declare var $: any;
 
 @Component({
@@ -17,18 +18,38 @@ declare var $: any;
 })
 export class NavbarComponent implements OnInit {
   angularVersion = VERSION;
-
+  isCollapsed;
+  onhandset;
   constructor(
     public authService: AuthService,
     private router: Router,
     public productService: ProductService,
     public translate: TranslateService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private breakpointObserver: BreakpointObserver
   ) {
     // console.log(translate.data);
+    breakpointObserver.observe([
+      Breakpoints.HandsetLandscape,
+      Breakpoints.HandsetPortrait
+    ]).subscribe(result => {
+      if (result.matches) {
+        this.onhandset = true
+        console.log("onhandset: "+this.onhandset)
+      }
+      else{
+        this.onhandset = false
+        console.log("onhandset: "+this.onhandset)
+        this.isCollapsed = true
+      }
+    });
   }
+  
 
-  ngOnInit() { }
+  ngOnInit() {
+    const isSmallScreen = this.breakpointObserver.isMatched('(max-width: 599px)');
+
+   }
   logout() {
     this.authService.logout();
     this.router.navigate(["/"]);
@@ -41,5 +62,17 @@ export class NavbarComponent implements OnInit {
 
   updateTheme(theme: string) {
     this.themeService.updateThemeUrl(theme);
+  }
+
+  toggleNav(){
+    if(this.onhandset){
+      if(!this.isCollapsed){
+        this.isCollapsed = true;
+      }else{
+        this.isCollapsed = false;
+      }
+     
+      console.log('colapse:'+this.isCollapsed)
+    }
   }
 }

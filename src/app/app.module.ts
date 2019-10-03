@@ -18,6 +18,7 @@ import { FooterComponent } from './index/footer/footer.component';
 import { ChatComponent } from './chat/chat.component';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { AngularFireModule } from "angularfire2";
+import {LayoutModule} from '@angular/cdk/layout';
 /* to load and set en.json as the default application language */
 export function setupTranslateFactory(service: TranslateService): Function {
 	return () => service.use('en');
@@ -28,6 +29,7 @@ export function setupTranslateFactory(service: TranslateService): Function {
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
+		LayoutModule,
 		IndexModule,
 		ProductModule,
 		UserModule,

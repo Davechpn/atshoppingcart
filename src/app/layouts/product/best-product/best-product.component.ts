@@ -24,7 +24,7 @@ export class BestProductComponent implements OnInit {
 			dots: false,
 			responsive: {
 				'0': { items: 1, margin: 5 },
-				'430': { items: 2, margin: 5 },
+				'320': { items: 2, margin: 5 },
 				'550': { items: 3, margin: 5 },
 				'670': { items: 4, margin: 5 }
 			},

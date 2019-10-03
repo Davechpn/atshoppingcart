@@ -71,7 +71,7 @@
 }
 
 .card.card-cascade .card-body {
-  padding-top: 1.8rem;
+  padding-top: 0.5rem;
 }
 .btn .fa,
 .card .card-body {
@@ -128,11 +128,46 @@
 }
 .card .card-footer .right a {
   color: #757575;
-  margin-left: 1rem;
+  margin-left: 0rem;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .card .card-footer .right a .fa-heart {
   color: var(--navBackground) !important;
+}
+
+.card-text{
+  border: 1px solid teal;
+
+}
+
+////@at-root
+
+.item{
+  margin: 5px;
+
+}
+
+.card-description{
+  display: none
+}
+
+
+.text-muted{
+  font-size: 0.6rem
+}
+
+
+
+///////@at-root
+@media screen and (min-width:480px){
+  .categories-top{
+    display: none;
+  }
+}
+@media screen and (max-width:480px){
+.categories-side{
+  display: none
+}
 }

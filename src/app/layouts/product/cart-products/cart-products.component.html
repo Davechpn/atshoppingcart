@@ -1,12 +1,13 @@
-<br>
-<div class="container" *ngIf="cartProducts.length > 0">
+
+<div class="container pulldown" *ngIf="cartProducts.length > 0">
+    <br><br>  <h3>Cart</h3>
   <div class="row">
     <!-- List of Products -->
-    <div class="col-8">
+    <div class="col-12">
       <div class="row">
-        <div class="col-4" *ngFor="let product of cartProducts">
-          <div class="item">
-            <div class=" mb-r">
+        <div class="col-6 col-sm-4" *ngFor="let product of cartProducts">
+          <div class="item" style="margin-top: 24px">
+            <div class="mb-r">
 
               <!--Card-->
               <div class="card card-cascade wider">
@@ -27,9 +28,9 @@
                 <!--Card content-->
                 <div class="card-body text-center no-padding">
                   <!--Category & Title-->
-                  <a class="text-muted">
+                  <!-- <a class="text-muted">
                     <h5>{{ product.productCategory }}</h5>
-                  </a>
+                  </a> -->
                   <h5 class="card-title">
                     <strong>
                       <a [routerLink]="['/products/product', product.$key]">{{ product.productName }}</a>
@@ -37,8 +38,8 @@
                   </h5>
 
                   <!--Description-->
-                  <p class="card-text">{{ product.productDescription }}
-                  </p>
+                  <!-- <p class="card-text">{{ product.productDescription }}
+                  </p> -->
 
                   <!--Card footer-->
                   <div class="card-footer">
@@ -65,11 +66,11 @@
       </div>
 
     </div>
-    <div class="col-4">
+    <div class="col-12"><br/>
       <app-cart-calculator [products]="cartProducts"></app-cart-calculator>
     </div>
   </div>
 </div>
-<div class="container" *ngIf="cartProducts.length === 0">
+<div class="container" *ngIf="cartProducts.length === 0"><br/>
   <app-no-products-found [title]="messageTitle" [description]="messageDescription"></app-no-products-found>
 </div>

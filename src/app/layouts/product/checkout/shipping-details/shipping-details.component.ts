@@ -25,10 +25,10 @@ export class ShippingDetailsComponent implements OnInit {
 		private router: Router
 	) {
 		/* Hiding products Element */
-		document.getElementById('productsTab').style.display = 'none';
-		document.getElementById('shippingTab').style.display = 'block';
-		document.getElementById('productsTab').style.display = 'none';
-		document.getElementById('resultTab').style.display = 'none';
+		// document.getElementById('productsTab').style.display = 'none';
+		// document.getElementById('shippingTab').style.display = 'block';
+		// document.getElementById('productsTab').style.display = 'none';
+		// document.getElementById('resultTab').style.display = 'none';
 
 		this.userDetail = new UserDetail();
 		this.products = productService.getLocalCartProducts();

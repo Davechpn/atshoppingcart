@@ -10,7 +10,7 @@
     </div>
   </div> -->
   <div class="row">
-    <div class="col-md-3" >
+    <div class="col-md-3 categories-side" >
       <div class="form-group" style="position: fixed;">
           <blockquote class="blockquote float-left bq-primary">
               <h3 class="bq-title">Categories</h3>
@@ -20,23 +20,32 @@
       <br/><br><br>
         <ul class="list-group" style="position: fixed; width: 22%">
           <li *ngFor="let brand of brands" class="list-group-item hoverable">
-            <a (click)="filterbyCategory(brand)">{{brand}}</a>
+            <a (click)="filterbyCat(brand)" >{{brand}}</a>
           </li>
        
         </ul>
-
-        
-
-      
+ 
     </div>
-    <div class="col-md-9">
+    <div class="categories-top pulldown">
+      <div class="col-md-9 col-12">
+        <label for="country">Categories</label>
+        <select class="custom-select d-block w-100" style="width: 200px" id="country" required [(ngModel)]="selectedBrand" (change)="filterbyCategory()" name="country">
+          <option *ngFor="let brand of brands" [value]="brand">{{brand}}</option>
+        
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid country.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-12">
 
-      <div class="container">
+      <div class="container pulldown">
         <app-card-loader [loop]="3" [height]="800" *ngIf="loading"></app-card-loader>
         <div class="row" *ngIf="!loading">
           <!-- List of Products -->
-          <div class="col-sm-4 mb-2" style="margin-top: 36px" *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 6, currentPage: page }">
-            <div class="item">
+          <div class="col-sm-4 col-6 mb-2" style="margin-top: 0px; padding: 0px " *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 6, currentPage: page }">
+            <div class="item" >
               <div class=" mb-r">
                 <!--Card-->
                 <div class="card card-cascade  wider " >
@@ -57,15 +66,14 @@
                     <a class="text-muted">
                       <h5>{{ product.productName  }}</h5>
                     </a>
-                    <p class="card-title">
+                    <p class="card-title card-description">
                       <strong>
                         <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{
                           product.productCategory}}</a>
                       </strong>
-                    </p>
+                    </p> 
                     <!--Description-->
-                    <p class="card-text">{{ product.productDescription }}
-                    </p>
+               
                     <!--Card footer-->
                     <div class="card-footer">
                       <span class="left">$ {{ product.productPrice }}</span>

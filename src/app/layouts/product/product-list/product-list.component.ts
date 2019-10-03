@@ -55,9 +55,31 @@ export class ProductListComponent implements OnInit {
 		this.productService.addFavouriteProduct(product);
 	}
 
-	filterbyCategory(brand){
+	filterbyCategory(){
 		console.log('filtering by category')
-	//	console.log(event.target.value)
+		console.log(this.selectedBrand)
+
+		const x = this.productService.getFilteredProducts(this.selectedBrand);
+		x.snapshotChanges().subscribe(
+			(product) => {
+				this.loading = false;
+				// this.spinnerService.hide();
+				this.productList = [];
+				product.forEach((element) => {
+					const y = element.payload.toJSON();
+					y['$key'] = element.key;
+					this.productList.push(y as Product);
+				});
+			},
+			(err) => {
+				this.toastrService.error('Error while fetching Products', err);
+			}
+		);
+	}
+
+	filterbyCat(brand){
+		console.log('filtering by category')
+		console.log(brand)
 
 		const x = this.productService.getFilteredProducts(brand);
 		x.snapshotChanges().subscribe(

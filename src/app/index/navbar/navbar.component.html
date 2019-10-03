@@ -5,35 +5,35 @@
   <a class="navbar-brand" href="javascript:;;"[routerLink]="[ '/' ]">MyStoro</a>
 
   <!-- Collapse button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+  <button class="navbar-toggler" type="button" (click)="toggleNav()" data-target="#basicExampleNav"
     aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <!-- Collapsible content -->
-  <div class="collapse navbar-collapse" id="basicExampleNav">
+  <div class="navbar-collapse" *ngIf="isCollapsed" id="basicExampleNav" [ngbCollapse]="isCollapsed">
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li (click)="toggleNav()" class="nav-item active">
         <a class="nav-link" href="javascript:;;" [routerLink]="[ '/' ]">
           {{this.translate.data["HOME"] | translate}}
           <span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" (click)="toggleNav()">
         <a class="nav-link" href="jaascript:;;" [routerLink]="[ '/products/all-products' ]">
           <!-- {{this.translate.data["PRODUCTS"] | translate}} -->
           Products
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" (click)="toggleNav()">
         <a class="nav-link" href="jaascript:;;" [routerLink]="[ '/contact']">
           <!-- {{this.translate.data["PRODUCTS"] | translate}} -->
           Contact Us 
         </a>
       </li>
-      <li class="nav-item" *ngIf="authService.isAdmin()">
+      <li class="nav-item" (click)="toggleNav()" *ngIf="authService.isAdmin()">
         <a class="nav-link" href="jaascript:;;" [routerLink]="[ '/task-board/tasks' ]">
           <!-- {{this.translate.data["TASKBOARD"] | translate}} -->
           DashBoard
@@ -46,7 +46,7 @@
     <!-- Links -->
 
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
+      <li class="nav-item" (click)="toggleNav()">
         <div>
           <a class="nav-link" href="javascript:;;" [routerLink]="['/products/favourite-products']">
             <i class="fa fa-heart">
@@ -56,7 +56,7 @@
         </div>
 
       </li>
-      <li class="nav-item">
+      <li class="nav-item" (click)="toggleNav()">
         <div>
           <a class="nav-link" href="javascript:;;" [routerLink]="['/products/cart-items']">
             <i class="fa fa-shopping-cart">
@@ -65,7 +65,7 @@
           </a>
         </div>
       </li>
-      <li class="nav-item" *ngIf="authService.isLoggedIn()">
+      <li class="nav-item" (click)="toggleNav()" *ngIf="authService.isLoggedIn()">
         <a class="nav-link" [routerLink]="['/users']">
           <i class="fa fa-user mr-1"></i>
           <!-- {{this.translate.data["MYACCOUNT"] | translate}} -->
@@ -132,11 +132,11 @@
             Hindi (hin)</a>
         </div>
       </li> -->
-      <li class="nav-item" *ngIf="!authService.isLoggedIn()">
+      <li (click)="toggleNav()"  class="nav-item" *ngIf="!authService.isLoggedIn()">
         <a class="nav-link" [routerLink]="[ '/login' ]">
           <i class="fa fa-sign-in mr-1"></i> {{this.translate.data["SIGNIN"] | translate}}</a>
       </li>
-      <li class="nav-item" *ngIf="authService.isLoggedIn()">
+      <li (click)="toggleNav()"  class="nav-item" *ngIf="authService.isLoggedIn()">
         <a class="nav-link" (click)="logout()">
           <i class="fa fa-sign-in mr-1"></i>{{this.translate.data["LOGOUT"] | translate}}</a>
       </li>

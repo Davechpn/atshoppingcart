@@ -13,9 +13,10 @@ import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
+import {LayoutModule} from '@angular/cdk/layout';
 
 @NgModule({
-	imports: [ CommonModule, ProductModule, SharedModule, RouterModule.forChild(IndexRoutes) ],
+	imports: [ CommonModule,LayoutModule, ProductModule, SharedModule, RouterModule.forChild(IndexRoutes) ],
 	declarations: [ IndexComponent, NavbarComponent, LoginComponent],
 	schemas: [ NO_ERRORS_SCHEMA ],
 	exports: [ NavbarComponent],

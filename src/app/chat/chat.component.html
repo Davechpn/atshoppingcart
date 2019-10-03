@@ -1,4 +1,4 @@
-<div *ngIf="chat_open" class="chat-container border-default">
+<div *ngIf="chat_open" class="chat-container ">
    <div class="chat-section chat-header">
        <div class="profile-section">
         <img class="profile-img" src = "./../../assets/img/avatar-at.png"/>
@@ -11,9 +11,6 @@
                  <div *ngIf="messag.admin" class="admin">{{messag.msg}}</div> 
                  <div *ngIf="!messag.admin" class="client">{{messag.msg}}</div> 
                </div>
-             
-         
-
    </div>
    <div class="chat-section chat-footer">
      <div class="send-input">  <textarea  id="send-msg" class="border-default-sm" (keyup.enter)="sendMessage()" [(ngModel)]="message"></textarea></div>

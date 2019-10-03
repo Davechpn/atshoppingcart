@@ -1,0 +1,55 @@
+[debug] [2019-10-03T11:14:28.591Z] ----------------------------------------------------------------------
+[debug] [2019-10-03T11:14:28.595Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2019-10-03T11:14:28.595Z] CLI Version:   7.3.2
+[debug] [2019-10-03T11:14:28.595Z] Platform:      darwin
+[debug] [2019-10-03T11:14:28.595Z] Node Version:  v10.15.1
+[debug] [2019-10-03T11:14:28.597Z] Time:          Thu Oct 03 2019 13:14:28 GMT+0200 (Central Africa Time)
+[debug] [2019-10-03T11:14:28.597Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-03T11:14:28.666Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-03T11:14:28.666Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/ralphsaymoremakuyana/as
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using angular-shoppingcart.
+[debug] [2019-10-03T11:14:33.781Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-03T11:14:33.782Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-03T11:14:34.745Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-03T11:14:34.824Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/angular-shoppingcart  
+ 
+[debug] [2019-10-03T11:14:36.636Z] <<< HTTP RESPONSE 403
+[debug] [2019-10-03T11:14:36.636Z] <<< HTTP RESPONSE BODY
+[debug] [2019-10-03T11:14:36.651Z] HTTP Error: 403, The caller does not have permission
+[debug] [2019-10-03T11:14:37.554Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:39:35)
+    at Request.self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:189:13)
+    at Request.EventEmitter.emit (domain.js:441:20)
+    at Request.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:1161:10)
+    at Request.emit (events.js:189:13)
+    at Request.EventEmitter.emit (domain.js:441:20)
+    at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:1083:12)
+    at Object.onceWrapper (events.js:277:13)
+[error] 
+[error] Error: Failed to get Firebase project angular-shoppingcart. Please make sure the project exists and your account has permission to access it.
